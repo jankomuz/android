@@ -20,6 +20,8 @@
            sync-c="true"
            sync-j="4" />
 
+    <project path="device/samsung/spica" name="dh-harald/cm_android_device_samsung_spica" revision="ics" />
+  <project path="vendor/openfimg" name="tom3q/openfimg" remote="github" revision="master" />
   <project path="build" name="CyanogenMod/android_build">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
