@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
+  <remote name="aosp"
            fetch="https://android.googlesource.com" />
 
-  <remote  name="github"
+  <remote name="github"
            fetch=".."
-           review="review.cyanogenmod.org" />
+           review="review.paranoid-rom.com" />
 
-  <remote  name="private"
+  <remote name="private"
            fetch="ssh://git@github.com" />
+
+  <remote name="paranoid"
+             fetch="ssh://git@bitbucket.org/paranoidandroid/" />
 
   <default revision="refs/heads/jellybean"
            remote="github"
@@ -19,9 +22,15 @@
   <project path="build" name="CyanogenMod/android_build">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-
-  <project path="android" name="CyanogenMod/android" />
-
+  <project path="device/samsung/spica" name="dh-harald/cm_android_device_samsung_spica" revision="ics" />
+  <project path="vendor/openfimg" name="tom3q/openfimg" remote="github" revision="master" />
+  <project path="paranoid" name="ParanoidAndroid/paranoid">
+    <copyfile src="build.sh" dest="rom-build.sh" />
+  </project>
+  <project path="android" name="ParanoidAndroid/android" />
+  <project path="vendor/pa" name="ParanoidAndroid/android_vendor_pa" />
+<project path="packages/apps/ParanoidBackup" name="ParanoidAndroid/android_packages_apps_ParanoidBackup" />
+<project path="packages/apps/ParanoidOTA" name="ParanoidAndroid/android_packages_apps_ParanoidOTA"/>
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" />
   <project path="bionic" name="CyanogenMod/android_bionic" />
   <project path="bootable/bootloader/legacy" name="CyanogenMod/android_bootable_bootloader_legacy" />
@@ -66,7 +75,7 @@
   <project path="external/dexmaker" name="CyanogenMod/android_external_dexmaker" />
   <project path="external/dhcpcd" name="CyanogenMod/android_external_dhcpcd" />
   <project path="external/dnsmasq" name="CyanogenMod/android_external_dnsmasq" />
-  <project path="external/doclava" name="CyanogenMod/android_external_doclava" />
+  <project path="external/doclava" name="ParanoidAndroid/android_external_doclava"/>
   <project path="external/dropbear" name="CyanogenMod/android_external_dropbear" />
   <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" />
   <project path="external/easymock" name="CyanogenMod/android_external_easymock" />
@@ -196,7 +205,7 @@
   <project path="external/zlib" name="CyanogenMod/android_external_zlib" />
   <project path="external/zxing" name="CyanogenMod/android_external_zxing" />
   <project path="frameworks/av" name="CyanogenMod/android_frameworks_av" />
-  <project path="frameworks/base" name="CyanogenMod/android_frameworks_base" />
+  <project path="frameworks/base" name="ParanoidAndroid/android_frameworks_base" />
   <project path="frameworks/compile/libbcc" name="CyanogenMod/android_frameworks_compile_libbcc" />
   <project path="frameworks/compile/linkloader" name="CyanogenMod/android_frameworks_compile_linkloader" />
   <project path="frameworks/compile/mclinker" name="CyanogenMod/android_frameworks_compile_mclinker" />
@@ -265,7 +274,7 @@
   <project path="packages/apps/Protips" name="CyanogenMod/android_packages_apps_Protips" />
   <project path="packages/apps/Provision" name="CyanogenMod/android_packages_apps_Provision" />
   <project path="packages/apps/QuickSearchBox" name="CyanogenMod/android_packages_apps_QuickSearchBox" />
-  <project path="packages/apps/Settings" name="CyanogenMod/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="ParanoidAndroid/android_packages_apps_Settings" />
   <project path="packages/apps/SoundRecorder" name="CyanogenMod/android_packages_apps_SoundRecorder" />
   <project path="packages/apps/SpareParts" name="CyanogenMod/android_packages_apps_SpareParts" />
   <project path="packages/apps/SpeechRecorder" name="CyanogenMod/android_packages_apps_SpeechRecorder" />
@@ -273,7 +282,7 @@
   <project path="packages/apps/Superuser" name="CyanogenMod/android_packages_apps_Superuser" />
   <project path="packages/apps/Tag" name="CyanogenMod/android_packages_apps_Tag" />
   <project path="packages/apps/Torch" name="CyanogenMod/android_packages_apps_Torch" />
-  <project path="packages/apps/Trebuchet" name="CyanogenMod/android_packages_apps_Trebuchet" />
+  <project path="packages/apps/Trebuchet" name="ParanoidAndroid/android_packages_apps_Trebuchet"/>
   <project path="packages/apps/VideoEditor" name="CyanogenMod/android_packages_apps_VideoEditor" />
   <project path="packages/apps/VoiceDialer" name="CyanogenMod/android_packages_apps_VoiceDialer" />
   <project path="packages/experimental" name="CyanogenMod/android_packages_experimental" />
